@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://gist.githubusercontent.com/jwcastillo/284024d597100f423c49/raw/ddacb2b345c5dceedd289d160b50d1a19556deb3/validarRUT.js"></script>
+
+  <title>Formulario Desis.cl</title>
+
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+  <style>
+    .formulario {
+      border-top: 1px solid #000000;
+      border-left: 1px solid #000000;
+      width: 60%;
+      margin-left: 10px;
+    }
+
+    .campos {
+      width: 50%;
+      float: left;
+      margin-top: 10px;
+    }
+     .campitos {
+      width: 20%;
+      float: left;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>FORMULARIO DE VOTACIÓN:</h3>
+  </div>
+  <form method="POST" id="Formulario_Votacion" action="Asset/PHP/app.php">
+  <div class="formulario">
+    <div>
+      <div class="campos">
+        Nombre Apellido
+      </div>
+      <div class="campos">
+        <input type="text" name="Nombre-Apellido" id="Nombre-Apellido" required>
+      </div>
+    </div>
+    <div>
+      <div class="campos">
+        Alias
+      </div>
+      <div class="campos">
+        <input type="text" name="Alias" id="Alias" required>
+      </div>
+    </div>
+    <div>
+      <div class="campos">
+        Rut
+      </div>
+      <div class="campos">
+        <input type="text" id="Rut" name="Rut" required oninput="checkRut(this)" >
+      </div>
+    </div>
+    <div>
+      <div class="campos">
+        Email
+      </div>
+      <div class="campos">
+        <input type="email" name="Email" id="Email" required>
+      </div>
+    </div>
+    <div>
+      <div class="campos">
+        Región
+      </div>
+      <div class="campos">
+
+        <select id="region" name="id_region" onchange="getComuna()" required>
+          <option value="">Seleccione una Región</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <div class="campos">
+        Comuna
+      </div>
+      <div class="campos">
+        <select id="comuna" name="id_comuna" onchange="getCandidato()" required>
+        </select>
+      </div>
+    </div>
+    <div>
+      <div class="campos">
+        Candidato
+      </div>
+      <div class="campos">
+        <select id="candidato" name="ID_Candidato" required>
+        </select>
+      </div>
+      <div class="campos">
+        Como se entero de nosotros
+      </div>
+      <div class="campos">
+        <div class="campitos">
+          <input type="checkbox" class="referencia" name="referencia[]" value="web" >Web
+        </div>
+        <div class="campitos">
+          <input type="checkbox" class="referencia" name="referencia[]" value="TV" >TV
+
+        </div>
+        <div class="campitos">
+          <input type="checkbox" class="referencia" name="referencia[]"  value="Redes Sociales" >Redes Sociales
+
+        </div>
+        <div class="campitos">
+          <input type="checkbox" class="referencia" name="referencia[]" value="Amigo" >Amigo
+
+        </div>
+      </div>
+    </div>
+    <div class="campos">
+      <button onclick="Votar()">Votar</button>
+    </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  <script src="Asset/js/app.js"></script>
+
+</body>
+
+</html>
