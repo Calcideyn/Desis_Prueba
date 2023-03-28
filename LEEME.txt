@@ -1,0 +1,10 @@
+PHP VERSION: 8.1
+BD: MySQL
+BD USER: root
+BD PASSWORD: 
+BD NAME: desis_prueba
+
+Pasos para montar sistema
+1) Descargar repositorio en donde se tenga instalado el servidor apache
+2) Cargar la BD desis_prueba
+3) Ingresar a la Url loca, en la que se tiene montado el sistema
